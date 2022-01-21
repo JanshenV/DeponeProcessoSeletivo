@@ -30,3 +30,9 @@
     flex-direction: column;
     justify-content: flex-start;
 }
+
+.buttons-icons {
+    display: flex;
+    width: 200px;
+    justify-content: space-evenly;
+}

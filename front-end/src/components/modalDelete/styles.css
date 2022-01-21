@@ -1,0 +1,40 @@
+.delete-backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-delete {
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 20px;
+    height: 200px;
+    width: 420px;
+}
+
+.delete-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 26px;
+}
+
+.confirm-password {
+    display: flex;
+    flex-direction: column;
+}
+
+.confirm-password input,
+.confirm-password button {
+    margin-bottom: 10px;
+}

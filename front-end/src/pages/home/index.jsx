@@ -1,7 +1,9 @@
 import './styles.css';
 import logoutIcon from '../../assets/logout.png';
 import editIcon from '../../assets/edit.png';
-import  EditModal  from '../../components/modal/index';
+import deleteIcon from '../../assets/delete.png';
+import EditModal from '../../components/modal/index';
+import ModalDelete from '../../components/modalDelete/index';
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
@@ -18,6 +20,7 @@ export default function Home() {
     });
 
     const [modalUp, setModalUp] = useState(false);
+    const [modalDeleteUp, setModalDeleteUp] = useState(false);
 
     useEffect(() => {
         if (!token) {
@@ -58,11 +61,16 @@ export default function Home() {
     function handleLogout() {
         localStorage.removeItem('token');
         if (modalUp) setModalUp(false);
+        if (modalDeleteUp) setModalDeleteUp(false);
         navigate('/login');
     };
 
     function handleEdit() {
         setModalUp(true);
+    };
+
+    function handleDelete() {
+        setModalDeleteUp(true)
     };
 
     return (
@@ -76,19 +84,32 @@ export default function Home() {
                
                 </div>
 
-                <img
+                <div className="buttons-icons">
+                     <img
                     src={editIcon}
                     onClick={() => handleEdit()}
                     alt='edit' />
+                
+                <img src={deleteIcon}
+                    onClick={() => handleDelete()}
+                    alt='delete'
+                />
 
                 <img
                     src={logoutIcon}
                     onClick={() => handleLogout()}
                     alt='logout' />
+                </div>
             </div>
             
             <h1>Bem Vindo a home</h1>
-            {modalUp && <EditModal setModalUp={setModalUp}/>}
+            {modalUp && <EditModal setModalUp={setModalUp} />}
+            {modalDeleteUp && <ModalDelete
+                setModalDeleteUp={setModalDeleteUp}
+                user={userData}
+                token={token}
+                navigate={navigate}
+            />}
         </div>
     );
 };
