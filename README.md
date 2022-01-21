@@ -1,4 +1,4 @@
-# DeparoProcessoSeletivo
+# DeponeProcessoSeletivo
 
 ## Documentação do projeto.
 
