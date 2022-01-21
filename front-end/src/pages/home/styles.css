@@ -1,0 +1,32 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+.home-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 20vh;
+    background-color: white;
+}
+
+.home-header img {
+    height: 40px;
+    cursor: pointer;
+}
+
+.user-info img {
+    height: 40px;
+    cursor: pointer;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
