@@ -231,6 +231,7 @@ async function DeleteUser(req, res) {
     const { id } = req.user;
     const { senha } = req.body;
 
+
     if (!senha || senha.length < 6) {
         return res.status(400).json({
             message: 'Senha tem de ter no mínimo 6 caractéres. '
