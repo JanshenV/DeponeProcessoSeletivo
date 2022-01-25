@@ -1,7 +1,7 @@
 create database psDatabase;
 
 create table users(
-    id serial,
+    id serial primary key,
     nome text not null,
     email text unique not null,
     senha text not null,
